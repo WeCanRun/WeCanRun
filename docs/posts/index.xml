@@ -1,0 +1,216 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on  无意 </title>
+		<link>https://chehb.gitee.io/posts/</link>
+		<description>Recent content in Posts on  无意 </description>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>zh-hans</language>
+		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+		<atom:link href="https://chehb.gitee.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title></title>
+			<link>https://chehb.gitee.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+			<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+			
+			<guid>https://chehb.gitee.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+			<description>zookeeper 的 ACL 权限控制 ​ ACL 权限控制，使用 scheme : id : permission 来标识，主要涵盖三个方面：
+  权限模式：授权的策略
+  授权对象：授权对象
+  权限：授予的权限
+其特性如下：
+  zookeeper 的权限控制是基于每个znode节点的，需要对每个结点设置权限
+  每个znode支持设置多种权限方案和多个权限
+  子节点不会继承父节点的权限，客户端无权访问某节点，但可能可以访问它的子节点
+  e.g.
+setAcl /test2 ip:192.168.60.130:crwda 权限模式 ​ 采用何种方式授权
+   方案 描述     world 只有一个用户：anyone，代表登录zookeeper所以人（）   ip 对客户端使用IP地址认证   auth 使用已添加的用户认证   digest 使用 ”用户名：密码“ 方式认证    授权对象 ​	给谁授予权限</description>
+			<content type="html"><![CDATA[<h2 id="zookeeper-的-acl-权限控制">zookeeper 的 ACL 权限控制</h2>
+<p>​       ACL 权限控制，使用 scheme : id : permission 来标识，主要涵盖三个方面：</p>
+<ul>
+<li>
+<p>权限模式：授权的策略</p>
+</li>
+<li>
+<p>授权对象：授权对象</p>
+</li>
+<li>
+<p>权限：授予的权限</p>
+<p>其特性如下：</p>
+</li>
+<li>
+<p>zookeeper 的权限控制是基于每个znode节点的，需要对每个结点设置权限</p>
+</li>
+<li>
+<p>每个znode支持设置多种权限方案和多个权限</p>
+</li>
+<li>
+<p>子节点不会继承父节点的权限，客户端无权访问某节点，但可能可以访问它的子节点</p>
+</li>
+</ul>
+<p>e.g.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">setAcl /test2 ip:192.168.60.130:crwda 
+</code></pre></div><h3 id="权限模式">权限模式</h3>
+<p>​          采用何种方式授权</p>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>world</td>
+<td>只有一个用户：anyone，代表登录zookeeper所以人（）</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>对客户端使用IP地址认证</td>
+</tr>
+<tr>
+<td>auth</td>
+<td>使用已添加的用户认证</td>
+</tr>
+<tr>
+<td>digest</td>
+<td>使用 ”用户名：密码“ 方式认证</td>
+</tr>
+</tbody>
+</table>
+<h3 id="授权对象">授权对象</h3>
+<p>​	给谁授予权限</p>
+<p>​	授权对象ID是指，权限赋予的实体，例如：IP地址或用户</p>
+<h3 id="授予的权限">授予的权限</h3>
+<p>​	授予什么权限</p>
+<p>​	可以授予的权限包括 create、delete、read、write、admin 也就是增、删、改、查、管理权限，这5种权限简写为cdrwa，注意这5种权限中，delete是指对子节点的删除权限、其他四种指对自身的操作权限</p>
+<table>
+<thead>
+<tr>
+<th>权限</th>
+<th>ACL 简写</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create</td>
+<td>c</td>
+<td>可以创建子节点</td>
+</tr>
+<tr>
+<td>delete</td>
+<td>d</td>
+<td>可以删除子节点</td>
+</tr>
+<tr>
+<td>read</td>
+<td>r</td>
+<td>可以读取节点数据及显示子节点列表</td>
+</tr>
+<tr>
+<td>write</td>
+<td>w</td>
+<td>可以设置节点数据</td>
+</tr>
+<tr>
+<td>admin</td>
+<td>a</td>
+<td>可以设置节点访问控制列表权限</td>
+</tr>
+</tbody>
+</table>
+<h3 id="授权的相关命令">授权的相关命令</h3>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>使用方式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getAcl</td>
+<td>getAcl<!-- raw HTML omitted --></td>
+<td>读取ACL.权限</td>
+</tr>
+<tr>
+<td>setAcl</td>
+<td>setAcl<!-- raw HTML omitted --><!-- raw HTML omitted --></td>
+<td>设置ACL权限</td>
+</tr>
+<tr>
+<td>addauth</td>
+<td>addauth<!-- raw HTML omitted --><!-- raw HTML omitted --></td>
+<td>添加认证用户</td>
+</tr>
+</tbody>
+</table>
+<h3 id="案例">案例</h3>
+<ul>
+<li>
+<p>world 授权模式</p>
+<p>命令</p>
+<pre><code class="language-shel" data-lang="shel">setAcl &lt;apth&gt; world:anyone:&lt;acl&gt;
+</code></pre></li>
+<li>
+<p>IP 授权模式</p>
+<p>命令</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">setAcl &lt;path&gt; ip:&lt;ip&gt;:&lt;acl&gt;
+</code></pre></div></li>
+<li>
+<p>auth 授权模式</p>
+<p>命令</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">addauth digest &lt;user&gt;:&lt;password&gt; <span class="c1"># 添加认证用户</span>
+setAcl &lt;path&gt; auth:&lt;user&gt;:&lt;acl&gt;
+</code></pre></div><p>e.g.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 1<span class="o">]</span> create /node <span class="s2">&#34;node&#34;</span>
+Created /node
+<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 2<span class="o">]</span> getAcl /node
+<span class="s1">&#39;world,&#39;</span>anyone
+: cdrwa
+<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 3<span class="o">]</span> setAcl /node auth:wuyi:adra
+Acl is not valid : /node
+<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 4<span class="o">]</span> addauth digest wuyi:123456
+<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 5<span class="o">]</span> setAcl /node auth:wuyi:adra
+<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 6<span class="o">]</span> getAcl /node
+<span class="s1">&#39;digest,&#39;</span>wuyi:dXM1WQjCmiOQtOD8PAQtDp5fCpY<span class="o">=</span>
+: dra
+<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 7<span class="o">]</span> 
+</code></pre></div></li>
+<li>
+<p>digest 授权模式：</p>
+<p>命令</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">setAcl &lt;path&gt; digest:&lt;user&gt;:&lt;password&gt;:&lt;acl&gt;
+</code></pre></div><p>这里的密码是经过 SHA1及 base64 处理的密文，在 shell 中可以通过一下命令计算：</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">echo</span> -n &lt;user&gt;:&lt;password&gt; <span class="p">|</span> openssl dgst -binary -sha1 <span class="p">|</span> openssl base64
+</code></pre></div><p>e.g.</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@centos7 ~<span class="o">]</span><span class="c1"># echo -n wuyi:123456 | openssl dgst -binary -sha1 | openssl base64</span>
+<span class="nv">dXM1WQjCmiOQtOD8PAQtDp5fCpY</span><span class="o">=</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 1<span class="o">]</span> create /node <span class="s2">&#34;node&#34;</span>
+Created /node
+<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 2<span class="o">]</span> setAcl /node digest:wuyi:dXM1WQjCmiOQtOD8PAQtDp5fCpY<span class="o">=</span>:cdrwa
+<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 3<span class="o">]</span> getAcl /node
+Authentication is not valid : /node
+<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 4<span class="o">]</span> addauth digest wuyi:123456
+<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 5<span class="o">]</span> getAcl /node
+<span class="s1">&#39;digest,&#39;</span>wuyi:dXM1WQjCmiOQtOD8PAQtDp5fCpY<span class="o">=</span>
+: cdrwa
+<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 6<span class="o">]</span> 
+</code></pre></div><h3 id="acl-超级管理员">ACL 超级管理员</h3>
+<p>​	zookeeper  的权限管理模式有一种叫做 super，该模式提供一个超管可以方便的访问任何权限的节点，假设这个超管是 super:admin，需要先为超管生成密码的密文</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">echo</span> -n super:admin <span class="p">|</span> openssl dgst -binary -sha1 <span class="p">|</span> openssl base64
+</code></pre></div><p>​	在 zookeeper 目录 /bin/zkServer.sh 中添加如下代码</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="s2">&#34;Dzookeeper.DigestAuthenticationProvider.superDigest=super:xQJmxLMiHGwaqBvst5y6rkB6HQs=&#34;</span> <span class="se">\</span>
+</code></pre></div><p>添加之后为</p>
+<p><img src="E:%5C%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91%5C%E5%9B%BE%E7%89%87%5Cimage-20200831101424059.png" alt="image-20200831101424059"></p>
+<p>重启 zookeeper 之后</p>
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">addauth digest super:admin <span class="c1"># 添加认证用用户</span>
+</code></pre></div></li>
+</ul>
+]]></content>
+		</item>
+		
+	</channel>
+</rss>
