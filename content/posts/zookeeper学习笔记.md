@@ -1,12 +1,13 @@
 ---
-title: "zookeeper 学习笔记"
-date: 2020-12-20T21:34:52+08:00
+title: "Zookeeper学习笔记"
+date: 2020-12-20T17:54:51+08:00
 draft: false
 toc: true
 images:
-tags:
+tags: 
   - untagged
 ---
+
 
 ## zookeeper 的 ACL 权限控制
 
@@ -193,3 +194,7 @@ setAcl /test2 ip:192.168.60.130:crwda
   ```
 
   
+
+
+
+
