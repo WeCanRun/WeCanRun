@@ -1,4 +1,4 @@
-baseURL = "https://chehb.gitee.io"
+baseURL = "https://chenhb.gitee.io"
 languageCode = "zh-hans"
 defaultContentLanguage = "en"
 title = " 无意 "
@@ -9,7 +9,7 @@ pygmentsUseClasses  = true
 # hasCJKLanguage = true  # If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.
 rssLimit = 10  # Maximum number of items in the RSS feed.
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
-enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/functions/emojify/
+enableEmoji = true  # Shorthand emgitojis in content files - https://gohugo.io/functions/emojify/
 googleAnalytics = "UA-166045776-1"
 # disqusShortname = "yourdiscussshortname"
 publishDir = "docs"
