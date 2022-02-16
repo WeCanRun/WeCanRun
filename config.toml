@@ -91,12 +91,12 @@ publishDir = "docs"
     weight = 11
 
   [[menu.nav]]
-    name = "Kubernetes 系列 "
-    url = "k8s-categories/"
+    name = "Container 系列 "
+    url = "container-categories/"
     weight = 11
 
   [[menu.nav]]
-    name = "Prometheus 系列 "
-    url = "prometheus-categories/"
-    weight = 11
+      name = "Kubernetes 系列 "
+      url = "k8s-categories/"
+      weight = 11
 
