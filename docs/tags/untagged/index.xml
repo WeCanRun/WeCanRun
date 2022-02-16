@@ -31,5 +31,14 @@ setAcl /test2 ip:192.168.60.130:crwda 权限模式 ​ 采用何种方式授权
    方案 描述     world 只有一个用户：anyone，代表登录zookeeper所以人（）   ip 对客户端使用IP地址认证   auth 使用已添加的用户认证   digest 使用 ”用户名：密码“ 方式认证    授权对象 ​	给谁授予权限</description>
     </item>
     
+    <item>
+      <title>First Post</title>
+      <link>http://whocanfly.gitee.io/posts/first-post/</link>
+      <pubDate>Sat, 19 Dec 2020 21:34:52 +0800</pubDate>
+      
+      <guid>http://whocanfly.gitee.io/posts/first-post/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
