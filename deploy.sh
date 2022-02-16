@@ -8,8 +8,8 @@ printf "\033[0;32mDeploying updates to Gitee...\033[0m\n"
 rm -rf docs/
 
 # Build the project.
-# hugo -t hermit # if using a theme, replace with `hugo -t <YOURTHEME>`
-hugo --gc --minify
+hugo -t hermit # if using a theme, replace with `hugo -t <YOURTHEME>`
+#hugo --log --gc --minify
 # Go To Public folder
 # cd public
 

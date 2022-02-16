@@ -1,14 +1,32 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 无意</title><link>http://whocanfly.gitee.io/posts/</link><description>Recent content in Posts on 无意</description><generator>Hugo -- gohugo.io</generator><language>zh-hans</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 20 Dec 2020 17:54:51 +0800</lastBuildDate><atom:link href="http://whocanfly.gitee.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Zookeeper学习笔记</title><link>http://whocanfly.gitee.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><pubDate>Sun, 20 Dec 2020 17:54:51 +0800</pubDate><guid>http://whocanfly.gitee.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid><description>zookeeper 的 ACL 权限控制 ​ ACL 权限控制，使用 scheme : id : permission 来标识，主要涵盖三个方面：
-权限模式：授权的策略
-授权对象：授权对象
-权限：授予的权限
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on  无意 </title>
+		<link>http://whocanfly.gitee.io/posts/</link>
+		<description>Recent content in Posts on  无意 </description>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>zh-hans</language>
+		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+		<lastBuildDate>Sun, 20 Dec 2020 17:54:51 +0800</lastBuildDate>
+		<atom:link href="http://whocanfly.gitee.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Zookeeper学习笔记</title>
+			<link>http://whocanfly.gitee.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+			<pubDate>Sun, 20 Dec 2020 17:54:51 +0800</pubDate>
+			
+			<guid>http://whocanfly.gitee.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+			<description>zookeeper 的 ACL 权限控制 ​ ACL 权限控制，使用 scheme : id : permission 来标识，主要涵盖三个方面：
+  权限模式：授权的策略
+  授权对象：授权对象
+  权限：授予的权限
 其特性如下：
-zookeeper 的权限控制是基于每个znode节点的，需要对每个结点设置权限
-每个znode支持设置多种权限方案和多个权限
-子节点不会继承父节点的权限，客户端无权访问某节点，但可能可以访问它的子节点
-e.g.
+  zookeeper 的权限控制是基于每个znode节点的，需要对每个结点设置权限
+  每个znode支持设置多种权限方案和多个权限
+  子节点不会继承父节点的权限，客户端无权访问某节点，但可能可以访问它的子节点
+  e.g.
 setAcl /test2 ip:192.168.60.130:crwda 权限模式 ​ 采用何种方式授权
-方案 描述 world 只有一个用户：anyone，代表登录zookeeper所以人（） ip 对客户端使用IP地址认证 auth 使用已添加的用户认证 digest 使用 ”用户名：密码“ 方式认证 授权对象 ​ 给谁授予权限</description><content type="html"><![CDATA[<h2 id="zookeeper-的-acl-权限控制">zookeeper 的 ACL 权限控制</h2>
+   方案 描述     world 只有一个用户：anyone，代表登录zookeeper所以人（）   ip 对客户端使用IP地址认证   auth 使用已添加的用户认证   digest 使用 ”用户名：密码“ 方式认证    授权对象 ​	给谁授予权限</description>
+			<content type="html"><![CDATA[<h2 id="zookeeper-的-acl-权限控制">zookeeper 的 ACL 权限控制</h2>
 <p>​       ACL 权限控制，使用 scheme : id : permission 来标识，主要涵盖三个方面：</p>
 <ul>
 <li>
@@ -192,4 +210,8 @@ Authentication is not valid : /node
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">addauth digest super:admin <span class="c1"># 添加认证用用户</span>
 </code></pre></div></li>
 </ul>
-]]></content></item></channel></rss>
+]]></content>
+		</item>
+		
+	</channel>
+</rss>
