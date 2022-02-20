@@ -3,33 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://whocanfly.gitee.io/</loc>
+    <loc>https://whocanfly.gitee.io/</loc>
     <lastmod>2020-12-20T17:54:51+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://whocanfly.gitee.io/posts/</loc>
+    <loc>https://whocanfly.gitee.io/posts/</loc>
     <lastmod>2020-12-20T17:54:51+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://whocanfly.gitee.io/tags/</loc>
+    <loc>https://whocanfly.gitee.io/tags/</loc>
     <lastmod>2020-12-20T17:54:51+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://whocanfly.gitee.io/tags/untagged/</loc>
+    <loc>https://whocanfly.gitee.io/tags/untagged/</loc>
     <lastmod>2020-12-20T17:54:51+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://whocanfly.gitee.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://whocanfly.gitee.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2020-12-20T17:54:51+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://whocanfly.gitee.io/posts/first-post/</loc>
-    <lastmod>2020-12-19T21:34:52+08:00</lastmod>
   </url>
   
 </urlset>
