@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 20 Dec 2020 17:54:51 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 09 Apr 2022 12:12:51 +0800</lastBuildDate>
     
 	<atom:link href="https://whocanfly.gitee.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>https://whocanfly.gitee.io/about/</link>
+      <pubDate>Sat, 09 Apr 2022 12:12:51 +0800</pubDate>
+      
+      <guid>https://whocanfly.gitee.io/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Etcd入门到实践</title>
+      <link>https://whocanfly.gitee.io/posts/etcd%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Sat, 09 Apr 2022 11:26:27 +0800</pubDate>
+      
+      <guid>https://whocanfly.gitee.io/posts/etcd%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5/</guid>
+      <description>一、Etcd 简介 etcd 是一个强一致性的分布式键值对存储，设计用来可靠而快速的保存关键数据并提供访问。通过分布式锁，leader 选举和写屏障 (write barriers) 来</description>
+    </item>
     
     <item>
       <title>Zookeeper学习笔记</title>
@@ -18,17 +36,7 @@
       <pubDate>Sun, 20 Dec 2020 17:54:51 +0800</pubDate>
       
       <guid>https://whocanfly.gitee.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-      <description>zookeeper 的 ACL 权限控制 ​ ACL 权限控制，使用 scheme : id : permission 来标识，主要涵盖三个方面：
-  权限模式：授权的策略
-  授权对象：授权对象
-  权限：授予的权限
-其特性如下：
-  zookeeper 的权限控制是基于每个znode节点的，需要对每个结点设置权限
-  每个znode支持设置多种权限方案和多个权限
-  子节点不会继承父节点的权限，客户端无权访问某节点，但可能可以访问它的子节点
-  e.g.
-setAcl /test2 ip:192.168.60.130:crwda 权限模式 ​ 采用何种方式授权
-   方案 描述     world 只有一个用户：anyone，代表登录zookeeper所以人（）   ip 对客户端使用IP地址认证   auth 使用已添加的用户认证   digest 使用 ”用户名：密码“ 方式认证    授权对象 ​	给谁授予权限</description>
+      <description>zookeeper 的 ACL 权限控制 ​ ACL 权限控制，使用 scheme : id : permission 来标识，主要涵盖三个方面： 权限模式：授权的策略 授权对象：授权对象 权限：授予的权限 其特性如下： zookeeper 的权</description>
     </item>
     
   </channel>

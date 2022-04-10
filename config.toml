@@ -6,13 +6,14 @@ theme = "hermit"
 # enableGitInfo = true
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
-# hasCJKLanguage = true  # If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.
+hasCJKLanguage = true  # If Chinese/Japanese/Korean is your main content language, enable this to make wordCount works right.
 rssLimit = 10  # Maximum number of items in the RSS feed.
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
 enableEmoji = true  # Shorthand emgitojis in content files - https://gohugo.io/functions/emojify/
 googleAnalytics = "UA-166045776-1"
 # disqusShortname = "yourdiscussshortname"
 publishDir = "docs"
+enableInlineShortcodes = true
 [author]
   name = " 无意 "
 
@@ -20,7 +21,7 @@ publishDir = "docs"
   # hrefTargetBlank = true
   # noreferrerLinks = true
   # nofollowLinks = true
-
+	
 [taxonomies]
   tag = "tags"
   # Categories are disabled by default.
@@ -35,11 +36,11 @@ publishDir = "docs"
   dateformNumTime = "2006-01-02 15:04 -0700"
 
   # Metadata mostly used in document's head
-  description = " 无意, 分享 "
+  description = " 无意, 小白分享 Golang、Kubernetes"
   # images = [""]
-  themeColor = "#494f5c"
+  themeColor = "#ede9e3"
 
-  homeSubtitle = "Metrics, Tracing, Logging"
+  homeSubtitle = "Go、Kubernetes 分享"
   footerCopyright = ' loading '
   # bgImg = ""  # Homepage background-image URL
 
@@ -49,7 +50,7 @@ publishDir = "docs"
   # Toggling this option needs to rebuild SCSS, requires Hugo extended version
   justifyContent = false  # Set "text-align: justify" to `.content`.
 
-  relatedPosts = false  # Add a related content section to all single posts page
+  relatedPosts = true  # Add a related content section to all single posts page
 
   code_copy_button = true # Turn on/off the code-copy-button for code-fields
 
@@ -79,7 +80,7 @@ publishDir = "docs"
     url = "about/"
     weight = 20
 
-
+	
   [[menu.nav]]
     name = " 文章 "
     url = "posts/"

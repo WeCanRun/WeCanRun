@@ -1,36 +1,94 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Posts on  无意 </title>
-		<link>https://whocanfly.gitee.io/posts/</link>
-		<description>Recent content in Posts on  无意 </description>
-		<generator>Hugo -- gohugo.io</generator>
-		<language>zh-hans</language>
-		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Sat, 09 Apr 2022 11:26:27 +0800</lastBuildDate>
-		<atom:link href="https://whocanfly.gitee.io/posts/index.xml" rel="self" type="application/rss+xml" />
-		
-		<item>
-			<title>Etcd入门到实践</title>
-			<link>https://whocanfly.gitee.io/posts/etcd%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5/</link>
-			<pubDate>Sat, 09 Apr 2022 11:26:27 +0800</pubDate>
-			
-			<guid>https://whocanfly.gitee.io/posts/etcd%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5/</guid>
-			<description>一、Etcd 简介 etcd 是一个强一致性的分布式键值对存储，设计用来可靠而快速的保存关键数据并提供访问。通过分布式锁，leader 选举和写屏障 (write barriers) 来</description>
-			<content type="html"><![CDATA[<p><img src="https://i.loli.net/2021/03/25/k3bIZ94PwCUYijD.jpg" alt="https//ilolinet/2021/03/25/k3bIZ94PwCUYijDjpg"></p>
-<h2 id="一etcd-简介">一、Etcd 简介</h2>
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#ede9e3">
+	<meta name="msapplication-TileColor" content="#ede9e3">
+<meta itemprop="name" content="Etcd入门到实践">
+<meta itemprop="description" content="一、Etcd 简介 etcd 是一个强一致性的分布式键值对存储，设计用来可靠而快速的保存关键数据并提供访问。通过分布式锁，leader 选举和写屏障 (write barriers) 来">
+<meta itemprop="datePublished" content="2022-04-09T11:26:27&#43;08:00" />
+<meta itemprop="dateModified" content="2022-04-09T11:26:27&#43;08:00" />
+<meta itemprop="wordCount" content="7583">
+
+
+
+<meta itemprop="keywords" content="云原生," /><meta property="og:title" content="Etcd入门到实践" />
+<meta property="og:description" content="一、Etcd 简介 etcd 是一个强一致性的分布式键值对存储，设计用来可靠而快速的保存关键数据并提供访问。通过分布式锁，leader 选举和写屏障 (write barriers) 来" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://whocanfly.gitee.io/posts/etcd%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5/" />
+<meta property="article:published_time" content="2022-04-09T11:26:27+08:00" />
+<meta property="article:modified_time" content="2022-04-09T11:26:27+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Etcd入门到实践"/>
+<meta name="twitter:description" content="一、Etcd 简介 etcd 是一个强一致性的分布式键值对存储，设计用来可靠而快速的保存关键数据并提供访问。通过分布式锁，leader 选举和写屏障 (write barriers) 来"/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Etcd入门到实践</title>
+	<link rel="stylesheet" href="https://whocanfly.gitee.io/css/style.min.eac77496566fd7d5768fd650ddb0b2b181ca6a2d7c5fdd6fe6b8ba4bf47e566f.css" integrity="sha256-6sd0llZv19V2j9ZQ3bCysYHKai18X91v5ri6S/R+Vm8=" crossorigin="anonymous">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://whocanfly.gitee.io"> 无意 </a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="https://whocanfly.gitee.io/posts/"> 文章 </a>
+				<a href="https://whocanfly.gitee.io/tags/"> 标签 </a>
+				<a href="https://whocanfly.gitee.io/about/"> 关于 </a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<button id="toc-btn" class="hdr-btn desktop-only-ib" title="Table of Contents"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg></button><span class="hdr-social hide-in-mobile"><a href="https://github.com/WeCanRun" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://whocanfly.gitee.io/posts/"> 文章 </a></li>
+			<li><a href="https://whocanfly.gitee.io/tags/"> 标签 </a></li>
+			<li><a href="https://whocanfly.gitee.io/about/"> 关于 </a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Apr 9, 2022</span></div>
+				<h1>Etcd入门到实践</h1>
+			</header>
+			<div class="content">
+				<p><img src="https://i.loli.net/2021/03/25/k3bIZ94PwCUYijD.jpg" alt="https//ilolinet/2021/03/25/k3bIZ94PwCUYijDjpg"></p>
+<h2 id="一etcd-简介">一、Etcd 简介<a href="#一etcd-简介" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <blockquote>
 <p>etcd 是一个强一致性的分布式键值对存储，设计用来可靠而快速的保存关键数据并提供访问。通过分布式锁，leader 选举和写屏障 (write barriers) 来实现可靠的分布式协作。etcd 集群是为高可用，持久性数据存储和检索而准备的。</p>
 <p>etcd 的场景默认处理的数据都是系统中的控制数据。所以 etcd 在系统中的角色不是其他 NoSQL 产品的替代品，更不能作为应用的主要数据存储。etcd 中应该尽量只存储系统中服务的配置信息，以此来实现 <strong>服务发现</strong>、<strong>分布式通知和协调</strong>，常见的还会使用 etcd 进行 <strong>主备选举</strong>、<strong>分布式锁</strong>、<strong>分布式数据队列</strong> 以及 <strong>服务健康监控</strong>。对于应用数据只推荐把数据量很小，但是更新和访问频次都很高的数据存储在 etcd 中。官方数据显示，etcd 单实例的写操作性能在 w 级别，读操作在 10w 级别</p>
 </blockquote>
-<h2 id="二etcd-工作原理">二、Etcd 工作原理</h2>
-<h3 id="1核心组件">1、核心组件</h3>
+<h2 id="二etcd-工作原理">二、Etcd 工作原理<a href="#二etcd-工作原理" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<h3 id="1核心组件">1、核心组件<a href="#1核心组件" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p><img src="https://i.loli.net/2021/03/23/QdSj6TnVAZtHEu4.png" alt="https//ilolinet/2021/03/23/QdSj6TnVAZtHEu4png"></p>
 <p>Server：用于处理用户发送的 API 请求以及其它 <code>etcd</code> 节点的同步与心跳信息请求。</p>
 <p>KV Store：用于处理 <code>etcd</code> 支持的各类功能的事务，包括数据索引、节点状态变更、监控与反馈、事件处理与执行等等，是 <code>etcd</code> 对用户提供的大多数 API 功能的具体实现，底层默认使用的是开源的嵌入式键值存储数据库 <a href="https://github.com/boltdb/bolt">bolt</a>，这个项目目前的状态已经是归档不再维护，如果想要使用这个项目可以使用 CoreOS 的 <a href="https://github.com/etcd-io/bbolt">bbolt</a> 版本。</p>
 <p>Raft：Raft 强一致性算法的具体实现，是 <code>etcd</code> 的核心。</p>
 <p>WAL：Write Ahead Log（预写式日志），是 <code>etcd</code> 的数据持久化存储方式。除了在内存中存有所有数据的状态以及节点的索引以外，<code>etcd</code> 就通过 WAL 进行持久化存储。WAL 中，所有的数据提交前都会事先记录日志。snapshot 是为了防止数据过多而进行快照压缩，默认每 10000 条记录做一次 <code>snapshot</code>, 经过 <code>snapshot</code> 以后的 WAL 文件就可以删除了。而通过 API 可以查询的历史 <code>etcd</code> 操作默认为 1000 条(v2 版本，v3 版本只要还未被压缩均能查到)；Entry 表示存储的具体日志内容</p>
 <p>通常，一个用户的请求发送过来，会经由 Server 转发给 Store 进行具体的事务处理，如果涉及到节点的修改，则交给 Raft 模块进行状态变更、日志记录，然后再同步给其他的 <code>etcd</code> 节点以确认数据提交，最后进行数据的提交，再次同步。</p>
-<h3 id="2数据一致性">2、数据一致性</h3>
+<h3 id="2数据一致性">2、数据一致性<a href="#2数据一致性" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p><code>etcd</code> 集群是一个分布式系统，由多个节点相互通信构成整体对外服务，每个节点都存储了完整的数据，并且通过 Raft 协议保证每个节点维护的数据是一致的。在集群中的数据流向只有一个方向，即从 <code>Leader</code> （主节点）流向 <code>Follower</code>（从节点），当从节点收到写请求后均会自动转发到主节点，从节点甚至不需要知道谁是主节点，并由主节点执行写操作，然后追加日志同步到集群所有节点，也就是说所有 <code>Follower</code> 的数据必须与 <code>Leader</code> 保持一致，如果不一致则会被覆盖。从用户的角度来说，对 <code>etcd</code> 集群中的所有节点进行读写效果是一样的。</p>
 <p>既然写操作涉及到节点间的数据同步，那么到底如何界定一个写入操作是成功的？<code>etcd</code> 认为写入请求被 <code>Leader</code> 节点处理并分发给了<code>Quorum(N/2+1)</code>个节点后，就是一个成功的写入。</p>
 <p>为了保证数据的一致性，那么无论何时集群中必须有且只有一个有效的 <code>Leader</code>, 所以 <code>etcd</code> 通过 Raft 协议来选举 <code>Leader</code>。首先，需要明确的是在选举过程中会出现三种角色，它们的关系如下图，其中 <code>Candidate</code> 是在选举期间才会出现的角色，正常的 <code>etcd</code> 集群只有 <code>Leader</code> 和 <code>Folower</code>。</p>
@@ -42,18 +100,18 @@
 <li>如果其他节点在 Term ID 内还没有投票，就会比较 <code>Candidate</code> 的 Max Index 是否比自己小，如果比自己大或者相等，就会投票给 <code>Candidate</code>；同时，会将自己的<code>选举计时器</code>重置；</li>
 <li><code>Candidate</code> 在获取到超过半数节点的选票后，升级为 <code>Leader</code>；并按照<code>心跳计时器</code>向集群中其他节点发送心跳报文，并同步日志等；<code>Follower</code> 收到心跳报文后，会重置<code>选举计时器</code>。</li>
 </ol>
-<h3 id="3数据模型">3、数据模型</h3>
+<h3 id="3数据模型">3、数据模型<a href="#3数据模型" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p><code>ectd</code> 提供了一个持久化、多版本、并发控制的数据模型，当键值对的值需要被新的数据替代时，<code>etcd</code> 还会继续保存先前版本的键值对。键值存储事实上是不可变的；它的操作不会就地更新结构，取而代之的是生成一个新的更新后的结构。在修改之后，<code>key</code> 的所有先前版本还是可以访问和监控的。为了防止维护老版本导致数据存储无限增长，存储应该被压缩来移除旧的版本，一旦存储被压缩来恢复空间，在压缩修订版本之前的修订版本都会被移除，即不可访问和监控。</p>
 <p>在物理视图上，<code>etcd</code> 以 <a href="https://en.wikipedia.org/wiki/B%2B_tree">B+ 树</a> 键值对的方式来存储物理数据，为了追求效率，存储的是当前修订版本与上一个修订版本间的差异（增量），单个修订版本的数据可能对应到 B+ 树上的多个键。需要说明的是，B+ 树上存储的键是一个三元组 <code>revision</code> (<code>major</code>, <code>sub</code>, <code>type</code>)，<code>major</code> 是持有 <code>key</code> 的存储修订版本、<code>sub</code> 区分同一个修订版本的不同 <code>key</code>、<code>type</code> 是用于特殊值的可选后缀。B+ 树的 key 空间的字符串按 <strong>字典序</strong> 排序，所以可以高效的支持 <strong>范围查询</strong>。</p>
 <p>除了使用 B+ 树 这种数据结构来持久化数据之外，<code>etcd</code> 还通过在内存中维护一棵 B 树索引来加速键的范围查询，<code>key</code> 是存储暴露给用户的 <code>key</code>。值是到持久化 B+ 树修改的指针。</p>
-<h3 id="4修订版本">4、修订版本</h3>
+<h3 id="4修订版本">4、修订版本<a href="#4修订版本" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <ul>
 <li><code>Revision</code> 表示改动序号（ID），每次 KV 的变化，leader 节点都会修改 <code>Revision</code> 值，因此，这个值在 <code>cluster</code> 内是全局唯一的，而且是递增的</li>
 <li><code>ModRevison</code> 记录了某个 <code>key</code> 最近修改时的 Revision，即它是与 <code>key</code> 关联的</li>
 <li><code>CreateRevision</code> 与<code>ModRevison</code>类似、记录的是某个<code>key</code>创建时的 <code>Revision</code></li>
 <li><code>Version</code> 表示 KV 的版本号，初始值为 <code>1</code>，每次修改 KV 对应的 <code>Version</code> 都会加 <code>1</code>，也就是说它是作用在 KV 之内的， 与其他 KV 无关</li>
 </ul>
-<h3 id="5etcd-v3-的-mvcc-实现">5、Etcd v3 的 MVCC 实现</h3>
+<h3 id="5etcd-v3-的-mvcc-实现">5、Etcd v3 的 MVCC 实现<a href="#5etcd-v3-的-mvcc-实现" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p><code>etcd</code> 在 BoltDB 中存储的 key 是 <code>revision</code>，<code>value</code> 是 <code>etcd</code> 自己的 <code>key-value</code> 组合，也就是说 <code>etcd</code> 会在 BoltDB 中保存每个版本，从而实现多版本控制。</p>
 <p>所以 <code>etcd</code> 在BoltDB 中查询数据时必须通过 <code>revision</code>，而客户端是通过 <code>key</code> 来查询 <code>value</code> 的，因此 <code>etcd</code> 还在内存中维护了一个 <code>kvindex</code>，用于保存 <code>key</code> 与 <code>revision</code> 之间的映射关系，也就是前文提到的 B 树索引。这样查询路径就变为：客户端提供 <code>key</code> =&gt; <code>etcd</code> 通过 <code>key</code> 在 <code>kvindex</code> 中查到对应的 <code>revision</code> =&gt; 接着通过 <code>revision</code> 在 BoltDB 查询 <code>value</code> =&gt; 最后将 <code>value</code> 返回给客户端</p>
 <p>在内存的索引中，每个用户的原始 <code>key</code>都关联了一个 <code>keyIndex</code> 结构， 如下：</p>
@@ -82,12 +140,12 @@
 </span><span class="c1"></span>    <span class="nx">sub</span>  <span class="kt">int64</span>
 <span class="p">}</span>
 </code></pre></div><p>综上，内存 B 树维护的是 <code>key</code> 到 <code>keyIndex</code> 之间的映射关系（<code>kvindex</code>），<code>keyIndex</code>内维护的是一个 <code>key</code> 对应多个版本的 <code>revision</code> 信息，而通过 <code>revision</code> 就可以在 BoltDB 中查询到对应的 <code>value</code>了。</p>
-<h2 id="三etcdctl-基本操作">三、etcdctl 基本操作</h2>
-<h3 id="1查看版本">1、查看版本</h3>
+<h2 id="三etcdctl-基本操作">三、etcdctl 基本操作<a href="#三etcdctl-基本操作" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<h3 id="1查看版本">1、查看版本<a href="#1查看版本" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">etcdctl version
-</code></pre></div><h3 id="2写入">2、写入</h3>
+</code></pre></div><h3 id="2写入">2、写入<a href="#2写入" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">etcdctl put &lt;key&gt; &lt;value&gt;
-</code></pre></div><h3 id="3读取">3、读取</h3>
+</code></pre></div><h3 id="3读取">3、读取<a href="#3读取" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <pre><code>// 读取键和值
 etcdctl get &lt;key&gt;
 // 只读取键
@@ -109,7 +167,7 @@ etcdctl get --from-key /test/key
 etcdctl get &lt;key&gt; --prefix --write-out=json
 // 输出详细的信息
 etcdctl get &lt;key&gt; --prefix --write-out=fields
-</code></pre><h3 id="4删除">4、删除</h3>
+</code></pre><h3 id="4删除">4、删除<a href="#4删除" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">// 删除一个键值对
 etcdctl del &lt;key&gt;
 // 删除键 &lt;key&gt; 并返回删除数以及被删除的键值对
@@ -120,7 +178,7 @@ etcdctl del &lt;key1&gt; &lt;key2&gt;
 etcdctl del /test --prefix
 // 删除大于等于键 /test/key 的 byte 值的键
 etcdctl del --from-key /test/key
-</code></pre></div><h3 id="5监控-watch">5、监控 watch</h3>
+</code></pre></div><h3 id="5监控-watch">5、监控 watch<a href="#5监控-watch" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">// 监控 &lt;key&gt; 的变化
 etcdctl watch &lt;key&gt;
 // 监控 &lt;key1&gt; 到 &lt;key2&gt; 范围的键
@@ -133,7 +191,7 @@ etcdctl watch &lt;key1&gt;
 etcdctl watch &lt;key2&gt;
 // 监控 key 的历史变动, 从 vision 为 <span class="m">3</span> 开始
 etcdctl watch --rev<span class="o">=</span><span class="m">3</span> &lt;key&gt;
-</code></pre></div><h3 id="6压缩修订版本">6、压缩修订版本</h3>
+</code></pre></div><h3 id="6压缩修订版本">6、压缩修订版本<a href="#6压缩修订版本" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">// 被压缩的历史版本不能被查询
 etcdctl compact &lt;vision&gt;
 
@@ -143,27 +201,27 @@ compacted revision <span class="m">250</span>
 
 $ etcdctl get /test --prefix --rev<span class="o">=</span><span class="m">249</span>
 ...mvcc: required revision has been compacted
-</code></pre></div><h3 id="7授予租约">7、授予租约</h3>
+</code></pre></div><h3 id="7授予租约">7、授予租约<a href="#7授予租约" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>应用可以为 <code>etcd</code> 集群里面的键授予租约。当键被附加到租约时，它的存活时间被绑定到租约的存活时间，而租约的存活时间相应的被 <code>time-to-live</code> (TTL) 管理。在租约授予时每个租约的最小 TTL 值由应用指定。租约的实际 TTL 值是不低于最小 TTL，由 <code>etcd</code> 集群选择。一旦租约的 TTL 到期，租约就过期并且所有附带的键都将被删除。</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">// 授予租约， TTL 为 10s
 $ etcdctl lease grant <span class="m">10</span>
 lease 694d77e7d63d678f granted with TTL<span class="o">(</span>10s<span class="o">)</span>
 // 将租约绑定到键上
 etcdctl put --lease<span class="o">=</span>694d77e7d63d678f &lt;key&gt; &lt;value&gt;
-</code></pre></div><h3 id="8撤销租约">8、撤销租约</h3>
+</code></pre></div><h3 id="8撤销租约">8、撤销租约<a href="#8撤销租约" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>应用通过租约 id 可以撤销租约， 撤销租约将删除所有它附带的 key。</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">etcdctl lease revoke 694d77e7d63d678f
-</code></pre></div><h3 id="9维持租约">9、维持租约</h3>
+</code></pre></div><h3 id="9维持租约">9、维持租约<a href="#9维持租约" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>租约到期时、会自动续约，此命令会阻塞命令行</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">etcdctl lease keep-alive 694d77e7d63d678f
-</code></pre></div><h3 id="10获取租约信息">10、获取租约信息</h3>
+</code></pre></div><h3 id="10获取租约信息">10、获取租约信息<a href="#10获取租约信息" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">// 返回租约时间以及剩余时间
 $ etcdctl lease timetolive 694d77e7d63d67a4
 lease 694d77e7d63d67a4 granted with TTL<span class="o">(</span>30s<span class="o">)</span>, remaining<span class="o">(</span>27s<span class="o">)</span>
 // 返回租约时间以、剩余时间以及租约附带的key
 $ etcdctl lease timetolive --keys 694d77e7d63d67a4
 lease 694d77e7d63d67a4 granted with TTL<span class="o">(</span>30s<span class="o">)</span>, remaining<span class="o">(</span>28s<span class="o">)</span>, attached keys<span class="o">([</span>/test/bbb /test/aaa<span class="o">])</span>
-</code></pre></div><h2 id="四golang-客户端简单示例">四、golang 客户端简单示例</h2>
+</code></pre></div><h2 id="四golang-客户端简单示例">四、golang 客户端简单示例<a href="#四golang-客户端简单示例" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <blockquote>
 <p>使用官方的 etcd/clientv3 包来连接 etcd 并进行相关操作</p>
 </blockquote>
@@ -278,7 +336,7 @@ lease 694d77e7d63d67a4 granted with TTL<span class="o">(</span>30s<span class="o
         <span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;clear etcd fail, %v\\\\n&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div><h2 id="五基于-etcd-的分布式锁实践">五、基于 Etcd 的分布式锁实践</h2>
+</code></pre></div><h2 id="五基于-etcd-的分布式锁实践">五、基于 Etcd 的分布式锁实践<a href="#五基于-etcd-的分布式锁实践" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <blockquote>
 <p>基于 etcd 客户端实现分布式锁，etcd 实现分布式锁的基础是 Lease (租约) 机制、Revision（修订版本号） 机制、Prefix 机制、Watch 机制</p>
 <ul>
@@ -340,7 +398,7 @@ lease 694d77e7d63d67a4 granted with TTL<span class="o">(</span>30s<span class="o
 2021-03-23 21:40:11.309478 I <span class="p">|</span> get lock <span class="k">for</span> session2
 2021-03-23 21:40:11.310478 I <span class="p">|</span> session2 unlocked
 2021-03-23 21:40:11.310478 I <span class="p">|</span> watch type: DELETE, k: /test/lock/694d785eff30693f, v:
-</code></pre></div><h2 id="六基于-etcd-的分布式系统主备选举实践">六、基于 Etcd 的分布式系统主备选举实践</h2>
+</code></pre></div><h2 id="六基于-etcd-的分布式系统主备选举实践">六、基于 Etcd 的分布式系统主备选举实践<a href="#六基于-etcd-的分布式系统主备选举实践" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <p>日常开发中，为了避免服务的单点故障，我们通常会采用分布式架构的形式，但在某些场景下我们希望某些功能只由特定的节点执行，这些功同时能被多个节点同时执行的话可能导致数据不一致，所以我们的系统可以通过选举出 <code>leader</code> 的方式来避免这些问题，而基于 <code>Ralf</code> 协议的 <code>etcd</code> 就是一个实现分布式系统选举可靠的中间件，与实现分布式锁类似，实现选举也要依赖于 <code>lease</code> (租约) 机制、<code>revision</code>（修订版本号） 机制、<code>prefix</code> 机制、<code>watch</code> 机制</p>
 <p><code>concurrency</code> 包实现选举的方法主要如下：</p>
 <p><img src="https://i.loli.net/2021/03/25/G8Scuy7LINbxq5m.png" alt="https//ilolinet/2021/03/25/G8Scuy7LINbxq5mpng"></p>
@@ -468,7 +526,7 @@ bin-24980
 2021-03-25 15:34:54.559815 I <span class="p">|</span> watch type: PUT, k: /test/campaign/694d78684eb7fb0f, v: chenhongbin-21324
 2021-03-25 15:34:54.559815 I <span class="p">|</span> chenhongbin-13260 quit leader
 2021-03-25 15:34:54.562814 I <span class="p">|</span> watch type: PUT, k: /test/campaign/694d78684eb7fb14, v: chenhongbin-13260
-</code></pre></div><h2 id="七基于-etcd-服务发现实践">七、基于 Etcd 服务发现实践</h2>
+</code></pre></div><h2 id="七基于-etcd-服务发现实践">七、基于 Etcd 服务发现实践<a href="#七基于-etcd-服务发现实践" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <p>所谓服务发现就是了解集群中是否有进程在监听 UDP 或者 TCP 端口，并且通过名字就可以进行查找和链接，因为在微服务中，一个服务重启后其 <code>endpoint</code> 极有可能发生变化</p>
 <p>满足服务发现的条件：</p>
 <ol>
@@ -632,7 +690,7 @@ bin-24980
     <span class="k">select</span> <span class="p">{}</span>
 
 <span class="p">}</span>
-</code></pre></div><h2 id="八基于-etcd-的共享配置中心实践">八、基于 etcd 的共享配置中心实践</h2>
+</code></pre></div><h2 id="八基于-etcd-的共享配置中心实践">八、基于 etcd 的共享配置中心实践<a href="#八基于-etcd-的共享配置中心实践" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <p>应用启动的时候拉取某个特定目录下的存储的配置信息，同时注册一个 watcher 并等待更新，etcd 会实时通知应用更新配置</p>
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">etcd</span>
 
@@ -747,8 +805,8 @@ bin-24980
 
     <span class="k">select</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre></div><h2 id="九基于-etcd-的分布式通知与协调实践">九、基于 etcd 的分布式通知与协调实践</h2>
-<h3 id="1-生命探针检测">1、 生命探针检测</h3>
+</code></pre></div><h2 id="九基于-etcd-的分布式通知与协调实践">九、基于 etcd 的分布式通知与协调实践<a href="#九基于-etcd-的分布式通知与协调实践" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<h3 id="1-生命探针检测">1、 生命探针检测<a href="#1-生命探针检测" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>需要依赖 <code>etcd</code> 的 <code>watch</code>机制和 <code>lease</code>机制，检测系统和被检测系统通过在 <code>etcd</code> 上的某个目录进行关联，从而实现解耦</p>
 <p><img src="https://i.loli.net/2021/06/04/xTAZ2OCutDdNYIv.png" alt="https//ilolinet/2021/06/04/xTAZ2OCutDdNYIvpng"></p>
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">etcd</span>
@@ -816,7 +874,7 @@ bin-24980
     <span class="p">}()</span>
     <span class="k">select</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre></div><h3 id="2-完成系统调度">2、 完成系统调度</h3>
+</code></pre></div><h3 id="2-完成系统调度">2、 完成系统调度<a href="#2-完成系统调度" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>依赖于 <code>watch</code> 机制，控制台负责特定目录的更新，推送系统监听目录的更新</p>
 <p><img src="https://i.loli.net/2021/06/04/HsmdchwnMPGzZkq.png" alt="https//ilolinet/2021/06/04/HsmdchwnMPGzZkqpng"></p>
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">etcd</span>
@@ -937,7 +995,7 @@ bin-24980
     <span class="nx">time</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
     <span class="nx">scheduler</span><span class="p">.</span><span class="nf">Notify</span><span class="p">(</span><span class="nx">Finished</span><span class="p">)</span>
 <span class="p">}</span>
-</code></pre></div><h3 id="3-完成工作汇报">3、 完成工作汇报</h3>
+</code></pre></div><h3 id="3-完成工作汇报">3、 完成工作汇报<a href="#3-完成工作汇报" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>依赖于 <code>watch</code> 机制，启动子任务时建立一个临时目录，子任务可以通过更新这个临时目录的值来汇报自己的工作进度</p>
 <p><img src="https://i.loli.net/2021/06/04/WOoDdEi3GRQsA2p.png" alt="https//ilolinet/2021/06/04/WOoDdEi3GRQsA2ppng"></p>
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">etcd</span>
@@ -1034,202 +1092,93 @@ bin-24980
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div>]]></content>
-		</item>
-		
-		<item>
-			<title>Zookeeper学习笔记</title>
-			<link>https://whocanfly.gitee.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-			<pubDate>Sun, 20 Dec 2020 17:54:51 +0800</pubDate>
-			
-			<guid>https://whocanfly.gitee.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-			<description>zookeeper 的 ACL 权限控制 ​ ACL 权限控制，使用 scheme : id : permission 来标识，主要涵盖三个方面： 权限模式：授权的策略 授权对象：授权对象 权限：授予的权限 其特性如下： zookeeper 的权</description>
-			<content type="html"><![CDATA[<h2 id="zookeeper-的-acl-权限控制">zookeeper 的 ACL 权限控制</h2>
-<p>​       ACL 权限控制，使用 scheme : id : permission 来标识，主要涵盖三个方面：</p>
-<ul>
-<li>
-<p>权限模式：授权的策略</p>
-</li>
-<li>
-<p>授权对象：授权对象</p>
-</li>
-<li>
-<p>权限：授予的权限</p>
-<p>其特性如下：</p>
-</li>
-<li>
-<p>zookeeper 的权限控制是基于每个znode节点的，需要对每个结点设置权限</p>
-</li>
-<li>
-<p>每个znode支持设置多种权限方案和多个权限</p>
-</li>
-<li>
-<p>子节点不会继承父节点的权限，客户端无权访问某节点，但可能可以访问它的子节点</p>
-</li>
-</ul>
-<p>e.g.</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">setAcl /test2 ip:192.168.60.130:crwda 
-</code></pre></div><h3 id="权限模式">权限模式</h3>
-<p>​          采用何种方式授权</p>
-<table>
-<thead>
-<tr>
-<th>方案</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>world</td>
-<td>只有一个用户：anyone，代表登录zookeeper所以人（）</td>
-</tr>
-<tr>
-<td>ip</td>
-<td>对客户端使用IP地址认证</td>
-</tr>
-<tr>
-<td>auth</td>
-<td>使用已添加的用户认证</td>
-</tr>
-<tr>
-<td>digest</td>
-<td>使用 ”用户名：密码“ 方式认证</td>
-</tr>
-</tbody>
-</table>
-<h3 id="授权对象">授权对象</h3>
-<p>​	给谁授予权限</p>
-<p>​	授权对象ID是指，权限赋予的实体，例如：IP地址或用户</p>
-<h3 id="授予的权限">授予的权限</h3>
-<p>​	授予什么权限</p>
-<p>​	可以授予的权限包括 create、delete、read、write、admin 也就是增、删、改、查、管理权限，这5种权限简写为cdrwa，注意这5种权限中，delete是指对子节点的删除权限、其他四种指对自身的操作权限</p>
-<table>
-<thead>
-<tr>
-<th>权限</th>
-<th>ACL 简写</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>create</td>
-<td>c</td>
-<td>可以创建子节点</td>
-</tr>
-<tr>
-<td>delete</td>
-<td>d</td>
-<td>可以删除子节点</td>
-</tr>
-<tr>
-<td>read</td>
-<td>r</td>
-<td>可以读取节点数据及显示子节点列表</td>
-</tr>
-<tr>
-<td>write</td>
-<td>w</td>
-<td>可以设置节点数据</td>
-</tr>
-<tr>
-<td>admin</td>
-<td>a</td>
-<td>可以设置节点访问控制列表权限</td>
-</tr>
-</tbody>
-</table>
-<h3 id="授权的相关命令">授权的相关命令</h3>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>使用方式</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>getAcl</td>
-<td>getAcl<!-- raw HTML omitted --></td>
-<td>读取ACL.权限</td>
-</tr>
-<tr>
-<td>setAcl</td>
-<td>setAcl<!-- raw HTML omitted --><!-- raw HTML omitted --></td>
-<td>设置ACL权限</td>
-</tr>
-<tr>
-<td>addauth</td>
-<td>addauth<!-- raw HTML omitted --><!-- raw HTML omitted --></td>
-<td>添加认证用户</td>
-</tr>
-</tbody>
-</table>
-<h3 id="案例">案例</h3>
-<ul>
-<li>
-<p>world 授权模式</p>
-<p>命令</p>
-<pre><code class="language-shel" data-lang="shel">setAcl &lt;apth&gt; world:anyone:&lt;acl&gt;
-</code></pre></li>
-<li>
-<p>IP 授权模式</p>
-<p>命令</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">setAcl &lt;path&gt; ip:&lt;ip&gt;:&lt;acl&gt;
-</code></pre></div></li>
-<li>
-<p>auth 授权模式</p>
-<p>命令</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">addauth digest &lt;user&gt;:&lt;password&gt; <span class="c1"># 添加认证用户</span>
-setAcl &lt;path&gt; auth:&lt;user&gt;:&lt;acl&gt;
-</code></pre></div><p>e.g.</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 1<span class="o">]</span> create /node <span class="s2">&#34;node&#34;</span>
-Created /node
-<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 2<span class="o">]</span> getAcl /node
-<span class="s1">&#39;world,&#39;</span>anyone
-: cdrwa
-<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 3<span class="o">]</span> setAcl /node auth:wuyi:adra
-Acl is not valid : /node
-<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 4<span class="o">]</span> addauth digest wuyi:123456
-<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 5<span class="o">]</span> setAcl /node auth:wuyi:adra
-<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 6<span class="o">]</span> getAcl /node
-<span class="s1">&#39;digest,&#39;</span>wuyi:dXM1WQjCmiOQtOD8PAQtDp5fCpY<span class="o">=</span>
-: dra
-<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 7<span class="o">]</span> 
-</code></pre></div></li>
-<li>
-<p>digest 授权模式：</p>
-<p>命令</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">setAcl &lt;path&gt; digest:&lt;user&gt;:&lt;password&gt;:&lt;acl&gt;
-</code></pre></div><p>这里的密码是经过 SHA1及 base64 处理的密文，在 shell 中可以通过一下命令计算：</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">echo</span> -n &lt;user&gt;:&lt;password&gt; <span class="p">|</span> openssl dgst -binary -sha1 <span class="p">|</span> openssl base64
-</code></pre></div><p>e.g.</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>root@centos7 ~<span class="o">]</span><span class="c1"># echo -n wuyi:123456 | openssl dgst -binary -sha1 | openssl base64</span>
-<span class="nv">dXM1WQjCmiOQtOD8PAQtDp5fCpY</span><span class="o">=</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 1<span class="o">]</span> create /node <span class="s2">&#34;node&#34;</span>
-Created /node
-<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 2<span class="o">]</span> setAcl /node digest:wuyi:dXM1WQjCmiOQtOD8PAQtDp5fCpY<span class="o">=</span>:cdrwa
-<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 3<span class="o">]</span> getAcl /node
-Authentication is not valid : /node
-<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 4<span class="o">]</span> addauth digest wuyi:123456
-<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 5<span class="o">]</span> getAcl /node
-<span class="s1">&#39;digest,&#39;</span>wuyi:dXM1WQjCmiOQtOD8PAQtDp5fCpY<span class="o">=</span>
-: cdrwa
-<span class="o">[</span>zk: 172.17.0.4:2181<span class="o">(</span>CONNECTED<span class="o">)</span> 6<span class="o">]</span> 
-</code></pre></div><h3 id="acl-超级管理员">ACL 超级管理员</h3>
-<p>​	zookeeper  的权限管理模式有一种叫做 super，该模式提供一个超管可以方便的访问任何权限的节点，假设这个超管是 super:admin，需要先为超管生成密码的密文</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">echo</span> -n super:admin <span class="p">|</span> openssl dgst -binary -sha1 <span class="p">|</span> openssl base64
-</code></pre></div><p>​	在 zookeeper 目录 /bin/zkServer.sh 中添加如下代码</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="s2">&#34;Dzookeeper.DigestAuthenticationProvider.superDigest=super:xQJmxLMiHGwaqBvst5y6rkB6HQs=&#34;</span> <span class="se">\
-</span></code></pre></div><p>添加之后为</p>
-<p><img src="E:%5C%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91%5C%E5%9B%BE%E7%89%87%5Cimage-20200831101424059.png" alt="image-20200831101424059"></p>
-<p>重启 zookeeper 之后</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">addauth digest super:admin <span class="c1"># 添加认证用用户</span>
-</code></pre></div></li>
-</ul>
-]]></content>
-		</item>
-		
-	</channel>
-</rss>
+</code></pre></div>
+			</div>
+
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://whocanfly.gitee.io/tags/%E4%BA%91%E5%8E%9F%E7%94%9F">云原生</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>7583 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2022-04-09 11:26 &#43;0800</p>
+			</footer>
+		</article>
+		<aside id="toc">
+			<div class="toc-title">Table of Contents</div>
+			<nav id="TableOfContents">
+  <ul>
+    <li><a href="#一etcd-简介">一、Etcd 简介</a></li>
+    <li><a href="#二etcd-工作原理">二、Etcd 工作原理</a>
+      <ul>
+        <li><a href="#1核心组件">1、核心组件</a></li>
+        <li><a href="#2数据一致性">2、数据一致性</a></li>
+        <li><a href="#3数据模型">3、数据模型</a></li>
+        <li><a href="#4修订版本">4、修订版本</a></li>
+        <li><a href="#5etcd-v3-的-mvcc-实现">5、Etcd v3 的 MVCC 实现</a></li>
+      </ul>
+    </li>
+    <li><a href="#三etcdctl-基本操作">三、etcdctl 基本操作</a>
+      <ul>
+        <li><a href="#1查看版本">1、查看版本</a></li>
+        <li><a href="#2写入">2、写入</a></li>
+        <li><a href="#3读取">3、读取</a></li>
+        <li><a href="#4删除">4、删除</a></li>
+        <li><a href="#5监控-watch">5、监控 watch</a></li>
+        <li><a href="#6压缩修订版本">6、压缩修订版本</a></li>
+        <li><a href="#7授予租约">7、授予租约</a></li>
+        <li><a href="#8撤销租约">8、撤销租约</a></li>
+        <li><a href="#9维持租约">9、维持租约</a></li>
+        <li><a href="#10获取租约信息">10、获取租约信息</a></li>
+      </ul>
+    </li>
+    <li><a href="#四golang-客户端简单示例">四、golang 客户端简单示例</a></li>
+    <li><a href="#五基于-etcd-的分布式锁实践">五、基于 Etcd 的分布式锁实践</a></li>
+    <li><a href="#六基于-etcd-的分布式系统主备选举实践">六、基于 Etcd 的分布式系统主备选举实践</a></li>
+    <li><a href="#七基于-etcd-服务发现实践">七、基于 Etcd 服务发现实践</a></li>
+    <li><a href="#八基于-etcd-的共享配置中心实践">八、基于 etcd 的共享配置中心实践</a></li>
+    <li><a href="#九基于-etcd-的分布式通知与协调实践">九、基于 etcd 的分布式通知与协调实践</a>
+      <ul>
+        <li><a href="#1-生命探针检测">1、 生命探针检测</a></li>
+        <li><a href="#2-完成系统调度">2、 完成系统调度</a></li>
+        <li><a href="#3-完成工作汇报">3、 完成工作汇报</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+		</aside>
+		<div class="post-nav thin">
+			<a class="prev-post" href="https://whocanfly.gitee.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Zookeeper学习笔记</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2022 <a href="https://whocanfly.gitee.io"> 无意 </a> loading </p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://whocanfly.gitee.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+
+	<script src="https://whocanfly.gitee.io/js/bundle.min.4a9a0ac3d2217822c7865b4161e6c2a71de1d70492264337755427898dd718f6.js" integrity="sha256-SpoKw9IheCLHhltBYebCpx3h1wSSJkM3dVQniY3XGPY=" crossorigin="anonymous"></script>
+	
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-166045776-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+
+</html>

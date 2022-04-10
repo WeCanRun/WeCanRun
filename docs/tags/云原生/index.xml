@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>云原生 on  无意 </title>
+    <link>https://whocanfly.gitee.io/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/</link>
+    <description>Recent content in 云原生 on  无意 </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hans</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 09 Apr 2022 11:26:27 +0800</lastBuildDate>
+    
+	<atom:link href="https://whocanfly.gitee.io/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Etcd入门到实践</title>
+      <link>https://whocanfly.gitee.io/posts/etcd%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Sat, 09 Apr 2022 11:26:27 +0800</pubDate>
+      
+      <guid>https://whocanfly.gitee.io/posts/etcd%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5/</guid>
+      <description>一、Etcd 简介 etcd 是一个强一致性的分布式键值对存储，设计用来可靠而快速的保存关键数据并提供访问。通过分布式锁，leader 选举和写屏障 (write barriers) 来</description>
+    </item>
+    
+  </channel>
+</rss>

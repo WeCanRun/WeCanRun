@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 20 Dec 2020 17:54:51 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 09 Apr 2022 12:12:51 +0800</lastBuildDate>
     
 	<atom:link href="https://whocanfly.gitee.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,18 @@
     <item>
       <title>untagged</title>
       <link>https://whocanfly.gitee.io/tags/untagged/</link>
-      <pubDate>Sun, 20 Dec 2020 17:54:51 +0800</pubDate>
+      <pubDate>Sat, 09 Apr 2022 12:12:51 +0800</pubDate>
       
       <guid>https://whocanfly.gitee.io/tags/untagged/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>云原生</title>
+      <link>https://whocanfly.gitee.io/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/</link>
+      <pubDate>Sat, 09 Apr 2022 11:26:27 +0800</pubDate>
+      
+      <guid>https://whocanfly.gitee.io/tags/%E4%BA%91%E5%8E%9F%E7%94%9F/</guid>
       <description></description>
     </item>
     
