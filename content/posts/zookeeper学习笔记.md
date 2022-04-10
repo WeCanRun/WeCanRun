@@ -185,7 +185,7 @@ setAcl /test2 ip:192.168.60.130:crwda
 
    添加之后为
 
-  ![image-20200831101424059](E:\我的坚果云\图片\image-20200831101424059.png)
+  ![image-20200831101424059](https://s2.loli.net/2022/04/10/E64NWqnwzLbTrRP.png)
 
   重启 zookeeper 之后
 
@@ -194,7 +194,6 @@ setAcl /test2 ip:192.168.60.130:crwda
   ```
 
   
-
 
 
 

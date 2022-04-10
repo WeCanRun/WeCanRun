@@ -253,7 +253,7 @@ Authentication is not valid : /node
 </code></pre></div><p>​	在 zookeeper 目录 /bin/zkServer.sh 中添加如下代码</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell"><span class="s2">&#34;Dzookeeper.DigestAuthenticationProvider.superDigest=super:xQJmxLMiHGwaqBvst5y6rkB6HQs=&#34;</span> <span class="se">\
 </span></code></pre></div><p>添加之后为</p>
-<p><img src="E:%5C%E6%88%91%E7%9A%84%E5%9D%9A%E6%9E%9C%E4%BA%91%5C%E5%9B%BE%E7%89%87%5Cimage-20200831101424059.png" alt="image-20200831101424059"></p>
+<p><img src="https://s2.loli.net/2022/04/10/E64NWqnwzLbTrRP.png" alt="image-20200831101424059"></p>
 <p>重启 zookeeper 之后</p>
 <div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">addauth digest super:admin <span class="c1"># 添加认证用用户</span>
 </code></pre></div></li>
