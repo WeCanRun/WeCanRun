@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 09 Apr 2022 12:12:51 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 20 Dec 2020 17:54:51 +0800</lastBuildDate>
     
 	<atom:link href="https://whocanfly.gitee.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About</title>
-      <link>https://whocanfly.gitee.io/about/</link>
-      <pubDate>Sat, 09 Apr 2022 12:12:51 +0800</pubDate>
-      
-      <guid>https://whocanfly.gitee.io/about/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Zookeeper学习笔记</title>

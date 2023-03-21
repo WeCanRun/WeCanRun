@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 09 Apr 2022 12:12:51 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 Apr 2022 22:47:27 +0800</lastBuildDate>
     
 	<atom:link href="https://whocanfly.gitee.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -28,15 +28,6 @@
       
       <guid>https://whocanfly.gitee.io/posts/kubernetes%E5%88%9D%E6%8E%A2/</guid>
       <description>Kubernetes 的设计理念 声明式 API 使用者直接描述期望状态，而不必在意过程，这样能够简化需要的代码，减少开发人员的工作；而命令式 API 更强调过程，它要求使用者提</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://whocanfly.gitee.io/about/</link>
-      <pubDate>Sat, 09 Apr 2022 12:12:51 +0800</pubDate>
-      
-      <guid>https://whocanfly.gitee.io/about/</guid>
-      <description></description>
     </item>
     
     <item>
