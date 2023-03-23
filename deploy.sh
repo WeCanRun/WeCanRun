@@ -5,7 +5,7 @@ set -e
 
 printf "\033[0;32mDeploying updates to Gitee...\033[0m\n"
 
-#rm -rf docs/
+cp docs/resume.pdf ./ && rm -rf docs/ && mkdir docs && mv resume.pdf docs/
 
 # Build the project.
 hugo -t hermit # if using a theme, replace with `hugo -t <YOURTHEME>`

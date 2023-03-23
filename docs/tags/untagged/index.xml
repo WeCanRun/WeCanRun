@@ -2,22 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>untagged on  无意 </title>
-    <link>https://whocanfly.gitee.io/tags/untagged/</link>
+    <link>https://wecanrun.github.io/tags/untagged/</link>
     <description>Recent content in untagged on  无意 </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 20 Dec 2020 17:54:51 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 22 Mar 2023 12:12:51 +0800</lastBuildDate>
     
-	<atom:link href="https://whocanfly.gitee.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://wecanrun.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>About</title>
+      <link>https://wecanrun.github.io/about/</link>
+      <pubDate>Wed, 22 Mar 2023 12:12:51 +0800</pubDate>
+      
+      <guid>https://wecanrun.github.io/about/</guid>
+      <description>个人信息 男，1996 年出生 求职意向：后端开发工程师 工作经验：3 年 当前状态：在职 教育经历 学士，广州大学，网络工程专业，2016.9 ~ 2020.7 奖学金：</description>
+    </item>
+    
+    <item>
       <title>Zookeeper学习笔记</title>
-      <link>https://whocanfly.gitee.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://wecanrun.github.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Sun, 20 Dec 2020 17:54:51 +0800</pubDate>
       
-      <guid>https://whocanfly.gitee.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://wecanrun.github.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>zookeeper 的 ACL 权限控制 ​ ACL 权限控制，使用 scheme : id : permission 来标识，主要涵盖三个方面： 权限模式：授权的策略 授权对象：授权对象 权限：授予的权限 其特性如下： zookeeper 的权</description>
     </item>
     

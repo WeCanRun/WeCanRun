@@ -1,20 +1,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Posts on  无意 </title>
-		<link>https://whocanfly.gitee.io/posts/</link>
+		<link>https://wecanrun.github.io/posts/</link>
 		<description>Recent content in Posts on  无意 </description>
 		<generator>Hugo -- gohugo.io</generator>
 		<language>zh-hans</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
 		<lastBuildDate>Sun, 10 Apr 2022 22:47:27 +0800</lastBuildDate>
-		<atom:link href="https://whocanfly.gitee.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		<atom:link href="https://wecanrun.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
 		
 		<item>
 			<title>Kubernetes服务发现与负载均衡</title>
-			<link>https://whocanfly.gitee.io/posts/kubernetes%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
+			<link>https://wecanrun.github.io/posts/kubernetes%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
 			<pubDate>Sun, 10 Apr 2022 22:47:27 +0800</pubDate>
 			
-			<guid>https://whocanfly.gitee.io/posts/kubernetes%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
+			<guid>https://wecanrun.github.io/posts/kubernetes%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
 			<description>什么是服务发现和负载均衡 服务发现 在微服务架构是由一系列职责单一的细粒度服务构成的分布式网状结构，服务之间通过轻量机制进行通信，这时候必然引入</description>
 			<content type="html"><![CDATA[<h2 id="什么是服务发现和负载均衡">什么是服务发现和负载均衡</h2>
 <h3 id="服务发现">服务发现</h3>
@@ -229,10 +229,10 @@
 		
 		<item>
 			<title>Kubernetes初探</title>
-			<link>https://whocanfly.gitee.io/posts/kubernetes%E5%88%9D%E6%8E%A2/</link>
+			<link>https://wecanrun.github.io/posts/kubernetes%E5%88%9D%E6%8E%A2/</link>
 			<pubDate>Sun, 10 Apr 2022 22:27:27 +0800</pubDate>
 			
-			<guid>https://whocanfly.gitee.io/posts/kubernetes%E5%88%9D%E6%8E%A2/</guid>
+			<guid>https://wecanrun.github.io/posts/kubernetes%E5%88%9D%E6%8E%A2/</guid>
 			<description>Kubernetes 的设计理念 声明式 API 使用者直接描述期望状态，而不必在意过程，这样能够简化需要的代码，减少开发人员的工作；而命令式 API 更强调过程，它要求使用者提</description>
 			<content type="html"><![CDATA[<h2 id="kubernetes-的设计理念">Kubernetes 的设计理念</h2>
 <p><strong>声明式 API</strong></p>
@@ -511,10 +511,10 @@ Kubernetes 中提供了一系列的健康检查，可以定制调用，来帮助
 		
 		<item>
 			<title>Etcd入门到实践</title>
-			<link>https://whocanfly.gitee.io/posts/etcd%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5/</link>
+			<link>https://wecanrun.github.io/posts/etcd%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5/</link>
 			<pubDate>Sat, 09 Apr 2022 11:26:27 +0800</pubDate>
 			
-			<guid>https://whocanfly.gitee.io/posts/etcd%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5/</guid>
+			<guid>https://wecanrun.github.io/posts/etcd%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E8%B7%B5/</guid>
 			<description>一、Etcd 简介 etcd 是一个强一致性的分布式键值对存储，设计用来可靠而快速的保存关键数据并提供访问。通过分布式锁，leader 选举和写屏障 (write barriers) 来</description>
 			<content type="html"><![CDATA[<p><img src="https://i.loli.net/2021/03/25/k3bIZ94PwCUYijD.jpg" alt="https//ilolinet/2021/03/25/k3bIZ94PwCUYijDjpg"></p>
 <h2 id="一etcd-简介">一、Etcd 简介</h2>
@@ -1539,10 +1539,10 @@ bin-24980
 		
 		<item>
 			<title>Zookeeper学习笔记</title>
-			<link>https://whocanfly.gitee.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+			<link>https://wecanrun.github.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
 			<pubDate>Sun, 20 Dec 2020 17:54:51 +0800</pubDate>
 			
-			<guid>https://whocanfly.gitee.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+			<guid>https://wecanrun.github.io/posts/zookeeper%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
 			<description>zookeeper 的 ACL 权限控制 ​ ACL 权限控制，使用 scheme : id : permission 来标识，主要涵盖三个方面： 权限模式：授权的策略 授权对象：授权对象 权限：授予的权限 其特性如下： zookeeper 的权</description>
 			<content type="html"><![CDATA[<h2 id="zookeeper-的-acl-权限控制">zookeeper 的 ACL 权限控制</h2>
 <p>​       ACL 权限控制，使用 scheme : id : permission 来标识，主要涵盖三个方面：</p>
