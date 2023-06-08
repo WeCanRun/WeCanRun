@@ -115,7 +115,7 @@ tags:
 ### 在运行的普通容器中附加 `vscode-sever`
 在命令面板中使用 `Dev Containers: Attach to Running Container...`, 然后选择正在运行的容器即可，[Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) 插件会自动在运行容器中启动 `vscode server`, 然后驱动本地 `vscode` 进行远程连接, 如果没有多余的设置，默认不会打开一个容器内的文件夹，需要手动选择打开文件夹，然后就可以进行正常的调试了，这种一般用于调试正在运行的服务代码，比较适合调试新技术等第三方代码的场景。
 
-![](../..assets/vscode-server.png)
+![2023-06-08-17-00-29-vscode-server](https://cdn.jsdelivr.net/gh/WeCanRun/pictures@main/blog/pictures/2023-06-08-17-00-29-vscode-server.png)
 
 
 ### 使用远程容器作为开发环境 

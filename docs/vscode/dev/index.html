@@ -173,7 +173,7 @@
 </span></code></pre></div><p><a href="https://containers.dev/implementors/json_reference/">完整的 <code>devcontainer.json</code> 示例</a></p>
 <h3 id="在运行的普通容器中附加-vscode-sever">在运行的普通容器中附加 <code>vscode-sever</code><a href="#在运行的普通容器中附加-vscode-sever" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>在命令面板中使用 <code>Dev Containers: Attach to Running Container...</code>, 然后选择正在运行的容器即可，<a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Dev Containers</a> 插件会自动在运行容器中启动 <code>vscode server</code>, 然后驱动本地 <code>vscode</code> 进行远程连接, 如果没有多余的设置，默认不会打开一个容器内的文件夹，需要手动选择打开文件夹，然后就可以进行正常的调试了，这种一般用于调试正在运行的服务代码，比较适合调试新技术等第三方代码的场景。</p>
-<p><img src="../..assets/vscode-server.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/WeCanRun/pictures@main/blog/pictures/2023-06-08-17-00-29-vscode-server.png" alt="2023-06-08-17-00-29-vscode-server"></p>
 <h3 id="使用远程容器作为开发环境">使用远程容器作为开发环境<a href="#使用远程容器作为开发环境" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>在本地使用容器作为开发环境比起直接使用本地环境或者 WSL 的方式更消耗资源，特别是使用多个开发环境的情况，而使用的容器作为开发环境本来就是为了隔离多个开发环境，使其彼此不相互影响，所以更好的方式是使用远程容器的方式来作为开发环境。</p>
 <p>有两种方式可以达到这个目的：</p>
