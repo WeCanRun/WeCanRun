@@ -1,6 +1,6 @@
 baseURL = "https://wecanrun.github.io"
 languageCode = "zh-hans"
-defaultContentLanguage = "en"
+defaultContentLanguage = "zh"
 title = " 无意 "
 theme = "hermit"
 # enableGitInfo = true
@@ -27,13 +27,16 @@ enableInlineShortcodes = true
   # Categories are disabled by default.
 
 [params]
+  page_view_conter=true
+
   since = "2020"
   toc = true
 
-  dateform        = "Jan 2, 2006"
+  dateform        = "Monday, January 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04 -0700"
+  dateformChinese = "2006年01月02日 星期一"
 
   # Metadata mostly used in document's head
   description = " 无意, 小白分享 Golang、Kubernetes"

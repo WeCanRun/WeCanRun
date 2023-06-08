@@ -1,5 +1,5 @@
 ---
-title: "Zookeeper学习笔记"
+title: "Zookeeper 学习笔记"
 date: 2020-12-20T17:54:51+08:00
 draft: false
 toc: true

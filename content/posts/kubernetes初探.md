@@ -1,5 +1,5 @@
 ---
-title: "Kubernetes初探"
+title: "Kubernetes 初探"
 date: 2022-04-10T22:27:27+08:00
 draft: false
 toc: true

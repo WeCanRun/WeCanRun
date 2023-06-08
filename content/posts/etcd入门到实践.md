@@ -1,5 +1,5 @@
 ---
-title: "Etcd入门到实践"
+title: "Etcd 入门到实践"
 date: 2022-04-09T11:26:27+08:00
 draft: false
 toc: true
